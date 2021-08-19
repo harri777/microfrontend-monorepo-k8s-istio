@@ -51,5 +51,10 @@
 ## View Applications service mesh
   - https://localhost:2001/ -> Kiali
 
+## Destroy local environment
+```
+  ./destroy.sh
+```
+
 ## Author
 - Harrisson Ricardo Biaggio
