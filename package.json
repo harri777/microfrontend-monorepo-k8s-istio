@@ -1,0 +1,17 @@
+{
+  "name": "microfrontend-monorepo-k8s-istio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "packages/shared/*"
+    ]
+  },
+  "author": "Harrisson Biaggio <harrissonbiaggio@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
