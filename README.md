@@ -28,6 +28,11 @@
   ./create-local-cluster-k3d.sh
 ```
 
+## Install and apply Istio
+```
+  ./install-istio.sh
+```
+
 ## Deployment applications
 ```
   ./all-deployments.sh
