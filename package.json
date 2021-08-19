@@ -12,6 +12,10 @@
   "author": "Harrisson Biaggio <harrissonbiaggio@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@vue/cli-plugin-eslint": "~4.5.0",
     "lerna": "^4.0.0"
+  },
+  "dependencies": {
+    "eslint-loader": "2.1.2"
   }
 }

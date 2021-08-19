@@ -16,7 +16,8 @@
     "*react*",
     "*react*/**",
     "*react-native*",
-    "*react-native*/**"
+    "*react-native*/**",
+    "**/@vue/cli-plugin-eslint", "**/@vue/cli-plugin-eslint/**"
   ],
   "packages": ["packages/*", "packages/shared/*"]
 }
