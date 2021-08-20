@@ -1,17 +1,50 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
 metadata:
-  name: gateway
-  annotations:
-    kubernetes.io/ingress.class: "istio"
+  name: demo-app-gateway
 spec:
-  rules:
-  - http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: nextjs-blog-service
-            port:
-              number: 80
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "*"
+
+---
+
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: next-virtual-service
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - demo-app-gateway
+  http:
+  - match:
+    - uri:
+        exact: /
+    - uri:
+        prefix: /_next
+    route:
+    - destination:
+        host: nextjs-blog-service
+        port:
+          number: 3000
+  - match:
+    - uri:
+        prefix: /react
+    - uri:
+        prefix: /static
+    - uri:
+        prefix: /sockjs-node
+    route:
+    - destination:
+        host: react-app-service
+        port:
+          number: 4000

@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: "nextjs-blog-deployment"
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: "nextjs-blog"
@@ -25,9 +25,9 @@ kind: Service
 metadata:
   name: nextjs-blog-service
 spec:
+  ports:
+    - port: 3000
+      name: http-web
+  type: ClusterIP
   selector:
     app: nextjs-blog
-  ports:
-  - port: 80
-    targetPort: 3000
-    name: http

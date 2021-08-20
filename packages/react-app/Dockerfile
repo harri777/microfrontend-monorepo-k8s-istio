@@ -9,10 +9,10 @@ COPY ../packages/react-app ./packages/react-app
 COPY yarn.lock ./
 
 
-RUN yarn workspace @webstore/react install
+RUN yarn workspace @webstore/react-app install
 
 EXPOSE 4000
 
 WORKDIR /app/packages/react-app
 
-CMD ["yarn", "start"]
+CMD ["yarn", "dev"]
