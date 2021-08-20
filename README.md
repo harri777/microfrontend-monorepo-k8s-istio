@@ -13,9 +13,9 @@
 - To deploy locally use: [k3d](https://k3d.io/)
 - To deploy cloud use: [AWS-EKS-Terraform](https://github.com/hawkz94/eks-terraform-k8s)
 
-## Install modules
+## Install dependencies
 ```
-  yarn install or npm install
+  yarn or npm install
 ```
 
 ## Run project local
