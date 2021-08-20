@@ -20,7 +20,7 @@
 
 ## Run project local
 ```
-  docker-compose up --build -d
+  docker-compose -f docker-compose-dev.yml up -d --build
 ```
 
 ## Create local cluster
