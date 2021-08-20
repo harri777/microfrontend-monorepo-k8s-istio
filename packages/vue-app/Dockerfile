@@ -15,4 +15,4 @@ EXPOSE 8080
 
 WORKDIR /app/packages/vue-app
 
-CMD ["yarn", "start"]
+CMD ["yarn", "dev"]

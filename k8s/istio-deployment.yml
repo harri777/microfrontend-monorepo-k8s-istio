@@ -48,3 +48,13 @@ spec:
         host: react-app-service
         port:
           number: 4000
+  - match:
+    - uri:
+        prefix: /vue
+    - uri:
+        prefix: /js
+    route:
+    - destination:
+        host: vue-app-service
+        port:
+          number: 8080
