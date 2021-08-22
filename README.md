@@ -1,39 +1,46 @@
-<h1 align="center">[WIP] Monorepo at microfrontends deploy with k8s and istio</h1>
+<h1 align="center">Monorepo at microfrontends deploy with k8s and istio</h1>
 
 ## Disclaimer
-```
 
-```
+The objective of this project is to show an orchestration architecture of a microfrontends monorepo for development and production environments, in addition to testing the sharing of libraries and utilities
+
+- 3 packages were createds (NextJS, ReactJS e VueJS)
+- A package for sharing libraries/function/utilities has been created (shared) - NextJs and VueJs share it.
+
+- Development environment were used: Docker, Lerna e Nginx - You might want to [see more details here](#).
+
+- Production environment were used: Kubernetes, Yarn workspaces e Istio - You might want to [see more details here](#).
 
 
 ## Dependencies
 - [Lerna](https://lerna.js.org/)
-- [NodeJS](https://nodejs.org/en/)
+- [Docker](https://www.docker.com/products/docker-desktop)
+- [Docker compose](https://docs.docker.com/compose/install/)
 - [Kubctl](https://kubernetes.io/docs/tasks/tools/)
 - To deploy locally use: [k3d](https://k3d.io/)
 - To deploy cloud use: [AWS-EKS-Terraform](https://github.com/hawkz94/eks-terraform-k8s)
 
-## Install dependencies
+## 1. Install dependencies
 ```
   yarn or npm install
 ```
 
-## Run project local
+## 1.2 Run project local without k8s
 ```
   docker-compose -f docker-compose-dev.yml up -d --build
 ```
 
-## Create local cluster
+## 2. Create local cluster k8s
 ```
   k3d cluster create mycluster --servers 1 --agents 2 --port 9080:80@loadbalancer --port 9443:443@loadbalancer --api-port 6443 --k3s-server-arg '--no-deploy=traefik'
 ```
 
-## Install and apply Istio
+## 2.1 Install and apply Istio
 ```
   ./istio-install-k3d.sh
 ```
 
-## Deployment applications
+## 2.3 Deployment applications
 ```
   - Deployments:
     - k8s/istio-gateway-deployment.yml
@@ -71,7 +78,7 @@
 
 ## Destroy local environment
 ```
-  k3d cluster create mycluster
+  k3d cluster delete mycluster
 ```
 
 ## Author
