@@ -35,7 +35,7 @@ spec:
     - destination:
         host: nextjs-blog-service
         port:
-          number: 3000
+          number: 80
   - match:
     - uri:
         prefix: /react
@@ -47,14 +47,18 @@ spec:
     - destination:
         host: react-app-service
         port:
-          number: 4000
+          number: 80
   - match:
     - uri:
         prefix: /vue
     - uri:
         prefix: /js
+    - uri:
+        prefix: /css
+    - uri:
+        prefix: /img
     route:
     - destination:
         host: vue-app-service
         port:
-          number: 8080
+          number: 80

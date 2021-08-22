@@ -16,7 +16,7 @@ spec:
         - name: "react-app"
           image: "harrissonbiaggio94/react-app"
           ports:
-            - containerPort: 4000
+            - containerPort: 80
 
 ---
 
@@ -28,6 +28,5 @@ spec:
   selector:
     app: react-app
   ports:
-  - port: 4000
-    targetPort: 4000
+  - port: 80
     name: http

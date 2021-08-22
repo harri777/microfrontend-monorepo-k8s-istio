@@ -11,14 +11,15 @@ COPY yarn.lock ./
 RUN yarn workspace @webstore/vue-app install
 RUN yarn workspace @webstore/utils install
 
-
 WORKDIR /app/packages/vue-app
 
-CMD ["yarn", "build"]
+RUN yarn build
 
 #Stage 2
 #######################################
 FROM nginx:1.19.0
+
+COPY ../packages/vue-app/nginx.conf /etc/nginx/nginx.conf
 
 WORKDIR /usr/share/nginx/html
 

@@ -16,7 +16,7 @@ spec:
         - name: "vue-app"
           image: "harrissonbiaggio94/vue-app"
           ports:
-            - containerPort: 8080
+            - containerPort: 80
 
 ---
 
@@ -28,5 +28,5 @@ spec:
   selector:
     app: vue-app
   ports:
-  - port: 8080
+  - port: 80
     name: http
