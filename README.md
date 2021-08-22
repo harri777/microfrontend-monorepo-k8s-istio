@@ -8,7 +8,8 @@
 
 ## Dependencies
 - [Lerna](https://lerna.js.org/)
-- [NodeJS](https://nodejs.org/en/)
+- [Docker](https://www.docker.com/products/docker-desktop)
+- [Docker compose](https://docs.docker.com/compose/install/)
 - [Kubctl](https://kubernetes.io/docs/tasks/tools/)
 - To deploy locally use: [k3d](https://k3d.io/)
 - To deploy cloud use: [AWS-EKS-Terraform](https://github.com/hawkz94/eks-terraform-k8s)
@@ -64,7 +65,7 @@
 
 ## Destroy local environment
 ```
-  k3d cluster create mycluster
+  k3d cluster delete mycluster
 ```
 
 ## Author
