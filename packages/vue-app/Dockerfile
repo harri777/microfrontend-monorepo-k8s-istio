@@ -1,4 +1,4 @@
-FROM node:14.16.1-alpine
+FROM node:14.16.1-alpine as build
 
 WORKDIR /app
 
@@ -11,8 +11,18 @@ COPY yarn.lock ./
 RUN yarn workspace @webstore/vue-app install
 RUN yarn workspace @webstore/utils install
 
-EXPOSE 8080
 
 WORKDIR /app/packages/vue-app
 
-CMD ["yarn", "dev"]
+CMD ["yarn", "build"]
+
+#Stage 2
+#######################################
+FROM nginx:1.19.0
+
+WORKDIR /usr/share/nginx/html
+
+RUN rm -rf ./*
+COPY --from=build /app/packages/vue-app/dist .
+
+ENTRYPOINT ["nginx", "-g", "daemon off;"]

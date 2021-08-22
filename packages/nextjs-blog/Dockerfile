@@ -11,8 +11,8 @@ COPY yarn.lock ./
 RUN yarn workspace @webstore/next-blog install
 RUN yarn workspace @webstore/utils install
 
-EXPOSE 3000
+EXPOSE 80
 
 WORKDIR /app/packages/nextjs-blog
 
-CMD ["yarn", "dev"]
+CMD ["yarn", "start"]

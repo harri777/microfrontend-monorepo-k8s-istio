@@ -1,4 +1,4 @@
-FROM node:14.16.1-alpine
+FROM node:14.16.1-alpine as build
 
 WORKDIR /app
 
@@ -11,8 +11,17 @@ COPY yarn.lock ./
 
 RUN yarn workspace @webstore/react-app install
 
-EXPOSE 4000
-
 WORKDIR /app/packages/react-app
 
-CMD ["yarn", "dev"]
+RUN yarn build
+
+#Stage 2
+#######################################
+FROM nginx:1.19.0
+
+WORKDIR /usr/share/nginx/html
+
+RUN rm -rf ./*
+COPY --from=build /app/packages/react-app/build .
+
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
