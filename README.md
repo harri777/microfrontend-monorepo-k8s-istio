@@ -1,9 +1,15 @@
-<h1 align="center">[WIP] Monorepo at microfrontends deploy with k8s and istio</h1>
+<h1 align="center">Monorepo at microfrontends deploy with k8s and istio</h1>
 
 ## Disclaimer
-```
 
-```
+The objective of this project is to show an orchestration architecture of a microfrontends monorepo for development and production environments, in addition to testing the sharing of libraries and utilities
+
+- 3 packages were createds (NextJS, ReactJS e VueJS)
+- A package for sharing libraries/function/utilities has been created (shared) - NextJs and VueJs share it.
+
+- Development environment were used: Docker, Lerna e Nginx - You might want to [see more details here](#).
+
+- Production environment were used: Kubernetes, Yarn workspaces e Istio - You might want to [see more details here](#).
 
 
 ## Dependencies
