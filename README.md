@@ -25,7 +25,7 @@
 
 ## Create local cluster
 ```
-  ./create-local-cluster-k3d.sh
+  k3d cluster create mycluster --servers 1 --agents 2 --port 9080:80@loadbalancer --port 9443:443@loadbalancer --api-port 6443 --k3s-server-arg '--no-deploy=traefik'
 ```
 
 ## Install and apply Istio
@@ -44,16 +44,16 @@
 ```
 
 ## View Applications
-  - http://localhost:8080/ -> next-blog
-  - http://localhost:8080/react -> react-app
-  - http://localhost:8080/vue -> vue-app
+  - http://localhost:9080/ -> next-blog
+  - http://localhost:9080/react -> react-app
+  - http://localhost:9080/vue -> vue-app
 
 ## View Applications service mesh
   - https://localhost:2001/ -> Kiali
 
 ## Destroy local environment
 ```
-  ./destroy.sh
+  k3d cluster create mycluster
 ```
 
 ## Author
