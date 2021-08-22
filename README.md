@@ -13,27 +13,27 @@
 - To deploy locally use: [k3d](https://k3d.io/)
 - To deploy cloud use: [AWS-EKS-Terraform](https://github.com/hawkz94/eks-terraform-k8s)
 
-## Install dependencies
+## 1. Install dependencies
 ```
   yarn or npm install
 ```
 
-## Run project local
+## 1.2 Run project local without k8s
 ```
   docker-compose -f docker-compose-dev.yml up -d --build
 ```
 
-## Create local cluster
+## 2. Create local cluster k8s
 ```
   k3d cluster create mycluster --servers 1 --agents 2 --port 9080:80@loadbalancer --port 9443:443@loadbalancer --api-port 6443 --k3s-server-arg '--no-deploy=traefik'
 ```
 
-## Install and apply Istio
+## 2.1 Install and apply Istio
 ```
   ./istio-install-k3d.sh
 ```
 
-## Deployment applications
+## 2.3 Deployment applications
 ```
   - Deployments:
     - k8s/istio-gateway-deployment.yml
