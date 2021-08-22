@@ -43,7 +43,7 @@
 ```
 
 ```
-  apply all deployments: ./apply-all-deployments
+  apply all deployments: ./apply-all-deployments.sh
 ```
 
 
@@ -59,8 +59,15 @@
   - http://localhost:9080/react -> react-app
   - http://localhost:9080/vue -> vue-app
 
-## View Applications service mesh
-  - https://localhost:2001/ -> Kiali
+## Install Applications service mesh
+```
+  ./istio-install-tools.sh
+```
+```
+  - https://localhost:20001/ -> Kiali
+  - https://localhost:9090/ -> Prometheus
+  - https://localhost:3000/ -> Grafana
+```
 
 ## Destroy local environment
 ```
