@@ -35,7 +35,7 @@
 
 ## Deployment applications
 ```
-  ./all-deployments.sh
+  ./apply-all-deployments.sh
 ```
 
 ## Get nodes
