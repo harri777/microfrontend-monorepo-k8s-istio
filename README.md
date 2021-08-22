@@ -30,17 +30,28 @@
 
 ## Install and apply Istio
 ```
-  ./install-istio.sh
+  ./istio-install-k3d.sh
 ```
 
 ## Deployment applications
 ```
-  ./all-deployments.sh
+  - Deployments:
+    - k8s/istio-gateway-deployment.yml
+    - packages/nextjs-blog/k8s/deployment.yml
+    - packages/react-app/k8s/deployment.yml
+    - packages/vue-app/k8s/deployment.yml
 ```
+
+```
+  apply all deployments: ./all-deployments.sh
+```
+
+
 
 ## Get nodes
 ```
-  kubctl get nodes
+  - kubctl get nodes
+  - kubctl get pods
 ```
 
 ## View Applications
