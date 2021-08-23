@@ -7,9 +7,9 @@ The objective of this project is to show an orchestration architecture of a micr
 - 3 packages were createds (NextJS, ReactJS e VueJS)
 - A package for sharing libraries/function/utilities has been created (shared) - NextJs and VueJs share it.
 
-- Development environment were used: Docker, Lerna e Nginx - You might want to [see more details here](#).
+- Development environment were used: Docker, Lerna e Nginx - You might want to [see more details here](https://github.com/hawkz94/microfrontend-monorepo-k8s-istio/blob/master/diagrams/local.jpeg).
 
-- Production environment were used: Kubernetes, Yarn workspaces e Istio - You might want to [see more details here](#).
+- Production environment were used: Kubernetes, Yarn workspaces e Istio - You might want to [see more details here](https://github.com/hawkz94/microfrontend-monorepo-k8s-istio/blob/master/diagrams/production.jpeg).
 
 
 ## Dependencies
