@@ -15,4 +15,6 @@ EXPOSE 80
 
 WORKDIR /app/packages/nextjs-blog
 
-CMD ["yarn", "start"]
+RUN yarn build
+
+CMD yarn start
