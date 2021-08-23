@@ -1,7 +1,5 @@
 <h1 align="center">Monorepo at microfrontends deploy with k8s and istio</h1>
 
-## Disclaimer
-
 The objective of this project is to show an orchestration architecture of a microfrontends monorepo for development and production environments, in addition to testing the sharing of libraries and utilities
 
 - 3 packages were createds (NextJS, ReactJS e VueJS)
