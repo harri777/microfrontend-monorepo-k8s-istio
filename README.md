@@ -28,7 +28,7 @@ The objective of this project is to show an orchestration architecture of a micr
   docker-compose -f docker-compose-dev.yml up -d --build
 ```
 
-## 2. Create local cluster k8s
+## 2. - Deploy with kubernetes - Create local cluster (k3d)
 ```
   k3d cluster create mycluster --servers 1 --agents 2 --port 9080:80@loadbalancer --port 9443:443@loadbalancer --api-port 6443 --k3s-server-arg '--no-deploy=traefik'
 ```
@@ -53,7 +53,7 @@ The objective of this project is to show an orchestration architecture of a micr
 
 
 
-## Get nodes
+## Get nodes/pods
 ```
   - kubctl get nodes
   - kubctl get pods
