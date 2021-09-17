@@ -68,6 +68,7 @@ The objective of this project is to show an orchestration architecture of a micr
 ```
   ./istio-install-tools.sh
 ```
+#### Observability
 ```
   - https://localhost:20001/ -> Kiali
   - https://localhost:9090/ -> Prometheus
